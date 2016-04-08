@@ -1,0 +1,7 @@
+<test_addin>
+	<addins>
+		<addin id="8" name="location_addin" lib="liblocation.so" mainflag="1" >
+			<config>/home/projects/svn/trunk/src/location/Debug_addin/server.conf</config>
+        </addin>
+	</addins>
+</test_addin>

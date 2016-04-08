@@ -1,0 +1,57 @@
+
+struct Animal{
+	int age;
+};
+
+sequence<int> IntList;
+dictionary<int,string> IdName;
+dictionary<string,Animal> IntListAnimal;
+dictionary<int,string> IntListStringDict;
+dictionary<string,IdName> IntlistIdNameDict;
+
+sequence<Animal> AnimalList;
+sequence<IdName> NewSeq;
+
+struct Mail{
+	int num;
+	float weight;
+	int color;
+	string name;
+	IntList ids;
+};
+
+sequence<Mail> MailList_t;
+
+interface postoffice{
+	string sayHello(string greeting,int pigs,float dogs);
+	bool isOpened(bool on,int p);
+	bool sendMail(Mail  mail);
+	int sendMailList(MailList_t mails);
+	MailList_t  queryMail(string name);
+	Mail queryMail2(IntList ids);
+	MailList_t queryMail3(IdName idname);
+	IntList queryMail4();
+	IdName queryMail5(int id);
+	AnimalList query1(int num);
+	NewSeq query2(AnimalList list);
+	IntListAnimal query3();
+	int query4(IntListAnimal arg);
+
+	void reverseCall(int cmd);
+
+
+};
+
+struct ClientInfo{
+	string id;
+	int     age;
+	int     sex;
+	string addr;
+};
+
+interface PostClient{
+	ClientInfo getInfo();
+    IdName getName(int id,string name);
+    NewSeq getNameSeq();
+};
+

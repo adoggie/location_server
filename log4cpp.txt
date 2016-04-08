@@ -1,0 +1,17 @@
+rootCategory=INFO, rootAppender
+category.location=DEBUG,A1
+
+
+# 定义rootAppender类型和layout属性，这里使用了BasicLayout
+appender.rootAppender=org.apache.log4cpp.ConsoleAppender
+appender.rootAppender.layout=org.apache.log4cpp.BasicLayout
+
+appender.A1=org.apache.log4cpp.FileAppender
+appender.A1.fileName=/var/location.log
+#appender.A1.layout=org.apache.log4cpp.SimpleLayout
+appender.A1.layout=PatternLayout
+appender.A1.layout.ConversionPattern=%d[%p]-%m%n
+
+
+
+

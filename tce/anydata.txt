@@ -1,0 +1,30 @@
+
+#include <iostream>
+using namespace std;
+#include "tce2.h"
+
+int main() {
+	tce2::PostClientPrxPtr prx;
+	tce::RpcCommunicator::instance().init();
+
+	tce::RpcConnectionPtr conn ;
+	tce::Properties_t props;
+	props["address_read"] = "amq.topic";
+	props["address_send"] = "amq.topic";
+	conn =tce::RpcCommunicator::instance().createConnection(tce::RpcConnection::QPID, "192.168.14.107:5672",props);
+	conn->connect();
+
+
+	prx = tce2::PostClientPrxPtr ( new tce2::PostClientPrx(conn) );
+	tce2::ClientInfo ci;
+	ci = prx->getInfo();
+
+//	tce::RpcCommunicator::instance().exec();
+
+//	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}
+
+
+
+

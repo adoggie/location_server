@@ -1,0 +1,37 @@
+环境依赖：
+	mongodb 
+		
+	qpid
+		queue name 在server.conf中配置mq.name, mq.broker
+   
+   
+提供文件：
+	location （二进制可执行文件）
+	server.conf （配置文件)
+	log4cxx.txt （配置文件）
+	batch_loc_imports.py （生成测试数据的脚本)
+	*.txt （数据文件）
+	
+
+	server.conf文件中需要配置的内容
+	*log4cxx.txt的位置
+	*mq.name
+	*mq.broker
+	*mongodb.host
+	*mongodb.port
+	*mongodb.user
+	*mongodb.passwd
+	*statusdump (运行状态输出，用于监控）
+	
+	*http.port (程序跑起来后监听的端口）
+	*http.threadnum (程序开启的工作线程数)
+运行方式
+	1.准备数据
+	执行batch_loc_imports.py
+	
+	2.运行程序
+	location [server.conf]
+	如果命令行参数未指定则设置系统环境变量 $LOCATION_CONFIG
+	
+	3.状态输出
+	kill -10 `ps -eaf | grep location | awk '{print $2}'`

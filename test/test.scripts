@@ -1,0 +1,27 @@
+  http://127.0.0.1/location_get?dev_id=2001
+    
+2. spatial query:    
+http://127.0.0.1/spatial_query?point=121.34,31.44&elasped=300&radius=0.01&limit=100&order=1&qtype=1
+http://127.0.0.1:8080/spatial_query?point=121.34,31.44&elapsed=300&radius=0.01&limit=100&order=1&qtype=1
+http://localhost:8080/location_get?dev_id=27053
+
+
+
+location    mem
+0			7.8m
+11200		11m
+12800       14m
+12981		19m
+
+location	vir		res	 	share
+0			1908m	16m		7256
+5000		1909m  	18m 	7316
+10000		1910m  	21m 	7320
+12981		1911m  	22m 	7316
+
+一个location记录消耗 400 bytes
+1m = 2500 location
+1g = 3,314,017 locations
+
+
+./FxShell -p /home/projects/svn/trunk/src/location/Debug_addin -f modules.xml -c 1

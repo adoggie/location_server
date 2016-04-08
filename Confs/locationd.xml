@@ -1,0 +1,7 @@
+<test_addin>
+	<addins>
+		<addin id="8" name="location_addin" lib="liblocation.so" mainflag="1" >
+			<config>server.conf</config>
+        </addin>
+	</addins>
+</test_addin>
